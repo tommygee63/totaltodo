@@ -11,14 +11,14 @@ export function AllTodos() {
         <main>
             {!todos ? <Link to='/createTodo' >Create Todo</Link> : <div>
                 {todos.map((todo) => {
-                    return <div>
+                    return <Link to={todo.id} key={todo.name} ><div>
                         <h2>{todo.name}</h2>
                         <ul>
                             {todo.items.map((item) => {
-                                return <li>{item}</li>
+                                return <li key={item} >{item}</li>
                             })}
                         </ul>
-                    </div>
+                    </div></Link>
                 })}
                 <Link to='/createTodo' >Create Todo</Link>
             </div>}

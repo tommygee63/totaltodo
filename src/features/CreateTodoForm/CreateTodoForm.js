@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../app/todoSlice';
 import { useNavigate } from 'react-router-dom'; 
+import { v4 as uuidv4 } from 'uuid';
 
 export function CreateTodoForm() {
     const [todoItems, setTodoItems] = useState([]);
@@ -14,8 +15,11 @@ export function CreateTodoForm() {
     function handleSubmit(e) {
         e.preventDefault();
 
+        let id = uuidv4();
+
         dispatch(addTodo({
             name: name,
+            id: id,
             items: todoItems
         }));
         setName('')
@@ -43,8 +47,8 @@ export function CreateTodoForm() {
         <form onSubmit={handleSubmit} >
             <h2>{name}</h2>
             {!todoItems ? null : <ul>
-                {todoItems.map((item) => {
-                    return <li>{item}</li>
+                {todoItems.map((item, index) => {
+                    return <li key={index} >{item}</li>
                 })}
             </ul> }
             <input type='text' value={name} onChange={handleNameChange} placeholder='Name your Todo...' />
