@@ -8,7 +8,7 @@ export function AllTodos() {
     const todos = useSelector(todosSelector);
 
     return (
-        <main>
+        <>
             {!todos ? <Link to='/createTodo' >Create Todo</Link> : <div>
                 {todos.map((todo) => {
                     return <Link to={todo.id} key={todo.name} ><div>
@@ -22,6 +22,6 @@ export function AllTodos() {
                 })}
                 <Link to='/createTodo' >Create Todo</Link>
             </div>}
-        </main>
+        </>
     )
 }

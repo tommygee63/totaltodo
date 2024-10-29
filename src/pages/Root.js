@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header} from '../features/Header/Header';
-import { AllTodos } from '../features/AllTodos/AllTodos';
+import { Outlet } from 'react-router-dom';
 
 export function Root() {
     return (
         <>
             <Header />
-            <AllTodos />
+            <Outlet />
         </>
     )
 }
