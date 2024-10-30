@@ -9,13 +9,13 @@ export function TodoForm({handleSubmit, handleNameChange, handleItemChange, hand
                     return <li key={index} >{item}</li>
                 })}
             </ul> }
-            <input type='text' value={name} onChange={handleNameChange} placeholder='Name your Todo...' />
+            <input type='text' value={name} onChange={handleNameChange} placeholder='Name your To do...' />
             <br/>
             <input type='text' value={item} onChange={handleItemChange} placeholder='Add an item...' />
             <br/>
-            <button onClick={handleClick} >Add Todo Item</button>
+            <button onClick={handleClick} >Add To do Item</button>
             <br/>
-            <input type='submit' value='Create Todo' />
+            <input type='submit' value='Create To do' className='submit' />
         </form>
     )
 };

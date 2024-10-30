@@ -21,9 +21,11 @@ export function AllTodos() {
 
     return (
         <div>
+            <div className='todoContainer' >
             {todos.map((todo, index) => {
                 return <TodoPreview todo={todo} key={index} />
                 })}
+            </div>
             <CreateTodoButton />
         </div>
     )

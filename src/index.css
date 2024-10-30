@@ -13,14 +13,13 @@ body {
 h1 {
   color: #0C0;
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
   display: inline-block;
   padding: 0.5rem;
 }
 h1:hover {
-  border: 1px dashed #0C0;
-  font-size: 3.2rem;
+  border: 4px dashed #0C0;
 }
 
 .link {
@@ -29,7 +28,7 @@ h1:hover {
 
 header {
   border-bottom: 5px dashed #0C0;
-  height: 125px;
+  height: 140px;
   box-sizing: border-box;
 }
 
@@ -42,14 +41,15 @@ header {
     border: 5px dashed #0C0;
     margin-top: 5rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .noTodo {
     width: 15%;
     height: 300px;
-    border: 2px dashed #0C0;
+    border: 3px dashed #0C0;
     margin: 20px 0;
     text-align: center;
   }
@@ -59,6 +59,29 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+    /*  -- To Do Preview --  */
+
+.todoPreview {
+  color: #0C0;
+  border: 3px dashed #0C0;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1rem;
+  width: 15%;
+  height: 300px;
+  overflow: hidden;
+}
+.previewLink {
+  background-color: #0C0;
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+.previewLink:hover {
+  font-size: 2.2rem;
+}
+
 
     /*  -- New To Do Button --  */
 
@@ -72,7 +95,7 @@ header {
       padding: 1rem;
     }
     .newTodo:hover {
-      font-size: 3.2rem;
+      border: 4px dashed #0C0;
     }
 
       /*  -- New To Do Form  --  */
@@ -104,4 +127,35 @@ input {
   margin-bottom: 2rem;
   border: none;
   padding: 0.5rem;
+  outline: none;
+}
+
+form button {
+  background-color: #0C0;
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  margin: 2rem;
+}
+form button:hover {
+  font-size: 1.7rem;
+}
+
+.submit:hover {
+  font-size: 2.2rem;
+}
+
+  /*  -- To Do View --  */
+
+.todoView {
+  font-size: 1.5rem;
+  border: 4px dashed #0C0;
+  width: 50%;
+  margin: 5rem auto;
+}
+
+.todoView h2 {
+  font-size: 2.5rem;
+  text-decoration: underline;
 }

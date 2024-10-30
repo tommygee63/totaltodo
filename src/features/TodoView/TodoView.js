@@ -12,7 +12,7 @@ export function TodoView() {
 
     return (
         <>
-        <div>
+        <div className='todoView' >
             <h2>{todo.name}</h2>
             {todo.items.map((item, index) => {
                 return <p key={index} >{item}</p>
