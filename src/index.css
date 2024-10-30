@@ -1,13 +1,107 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #0C0;
+  background-color: black;
+  font-family: monospace;
+  background: radial-gradient(closest-side, #666666, #333333, #000000);
+  background-attachment: fixed;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /*  -- Header --  */
+
+h1 {
+  color: #0C0;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem;
+}
+h1:hover {
+  border: 1px dashed #0C0;
+  font-size: 3.2rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 5px dashed #0C0;
+  height: 125px;
+  box-sizing: border-box;
+}
+
+  /*  -- No To dos --  */
+
+  .todoContainer {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    border: 5px dashed #0C0;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .noTodo {
+    width: 15%;
+    height: 300px;
+    border: 2px dashed #0C0;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .noTodo p {
+    margin-top: 10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+    /*  -- New To Do Button --  */
+
+    .newTodo {
+      font-family: monospace;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #0C0;
+      text-decoration: none;
+      border: 2px dashed #0C0;
+      padding: 1rem;
+    }
+    .newTodo:hover {
+      font-size: 3.2rem;
+    }
+
+      /*  -- New To Do Form  --  */
+
+form {
+  border: 5px dashed #0C0;
+  width: 50%;
+  margin: 2rem auto;
+}
+
+form h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+form ul {
+  list-style: none;
+}
+
+form li {
+  font-size: 2rem;
+}
+
+input {
+  background-color: #0C0;
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  border: none;
+  padding: 0.5rem;
 }

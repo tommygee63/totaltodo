@@ -1,27 +1,30 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { todosSelector } from '../../app/todoSlice';
+import { CreateTodoButton } from '../../components/CreateTodoButton';
+import { NoTodos } from '../../components/NoTodos';
+import { TodoPreview } from '../../components/TodoPreview';
 
 export function AllTodos() {
 
     const todos = useSelector(todosSelector);
 
+
+    if (todos.length === 0) {
+        return (
+            <div>
+                <NoTodos />
+                <CreateTodoButton />
+            </div>
+        )
+    };
+
     return (
-        <>
-            {!todos ? <Link to='/createTodo' >Create Todo</Link> : <div>
-                {todos.map((todo) => {
-                    return <Link to={todo.id} key={todo.name} ><div>
-                        <h2>{todo.name}</h2>
-                        <ul>
-                            {todo.items.map((item) => {
-                                return <li key={item} >{item}</li>
-                            })}
-                        </ul>
-                    </div></Link>
+        <div>
+            {todos.map((todo, index) => {
+                return <TodoPreview todo={todo} key={index} />
                 })}
-                <Link to='/createTodo' >Create Todo</Link>
-            </div>}
-        </>
+            <CreateTodoButton />
+        </div>
     )
-}
+};

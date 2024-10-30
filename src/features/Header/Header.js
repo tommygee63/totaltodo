@@ -1,6 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Header() {
-    return <NavLink to='/' ><h1>Total Todo</h1></NavLink>
+    return <Link to='/' className='link' ><h1>Total To Do</h1></Link>
 };

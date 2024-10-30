@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addTodo } from '../../app/todoSlice';
 import { useNavigate } from 'react-router-dom'; 
 import { v4 as uuidv4 } from 'uuid';
+import { TodoForm } from '../../components/TodoForm';
 
 export function CreateTodoForm() {
     const [todoItems, setTodoItems] = useState([]);
@@ -43,18 +44,13 @@ export function CreateTodoForm() {
         setItem('');
     };
 
-    return (
-        <form onSubmit={handleSubmit} >
-            <h2>{name}</h2>
-            {!todoItems ? null : <ul>
-                {todoItems.map((item, index) => {
-                    return <li key={index} >{item}</li>
-                })}
-            </ul> }
-            <input type='text' value={name} onChange={handleNameChange} placeholder='Name your Todo...' />
-            <input type='text' value={item} onChange={handleItemChange} />
-            <button onClick={handleClick} >Add Todo Item</button>
-            <input type='submit' value='Create Todo' />
-        </form>
-    )
+    return <TodoForm 
+        handleSubmit={handleSubmit} 
+        handleNameChange={handleNameChange} 
+        handleItemChange={handleItemChange} 
+        handleClick={handleClick} 
+        todoItems={todoItems}
+        name={name}
+        item={item}
+    />
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { todosSelector } from '../../app/todoSlice';
+import { CreateTodoButton } from '../../components/CreateTodoButton';
 
 export function TodoView() {
 
@@ -10,11 +11,14 @@ export function TodoView() {
     const todo = todos.find((todo) => todo.id === todoId);
 
     return (
+        <>
         <div>
             <h2>{todo.name}</h2>
             {todo.items.map((item, index) => {
                 return <p key={index} >{item}</p>
             })}
         </div>
+        <CreateTodoButton />
+        </>
     )
 };
