@@ -23,5 +23,5 @@ export function FormSubmitButton({setName, setTodoItems, name, todoItems}) {
         navigate('/')
     };
 
-    return <button onClick={handleClick} >Create To Do</button>
+    return <button onClick={handleClick} className='submit' >Create To Do</button>
 };

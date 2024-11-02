@@ -41,7 +41,7 @@ export function CreateTodoForm() {
         name={name}
         item={item}
              />
-             <FormSubmitButton setName={setName} setTodoItems={setTodoItems} name={name} todoItems={todoItems} />
+            <FormSubmitButton setName={setName} setTodoItems={setTodoItems} name={name} todoItems={todoItems} />
         </>
     )
 };
