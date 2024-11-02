@@ -1,33 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../app/todoSlice';
-import { useNavigate } from 'react-router-dom'; 
-import { v4 as uuidv4 } from 'uuid';
 import { TodoForm } from '../../components/TodoForm';
 import { ListView } from '../../components/ListView';
+import { FormSubmitButton } from '../../components/FormSubmitButton';
 
 export function CreateTodoForm() {
     const [todoItems, setTodoItems] = useState([]);
     const [item, setItem] = useState('')
     const [name, setName] = useState('')
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    /*function handleSubmit(e) {
-        e.preventDefault();
-
-        let id = uuidv4();
-
-        dispatch(addTodo({
-            name: name,
-            id: id,
-            items: todoItems
-        }));
-        setName('')
-        setTodoItems([])
-        navigate('/')
-    };*/
 
     function handleNameChange(e) {
         setName(e.target.value);
@@ -61,6 +41,7 @@ export function CreateTodoForm() {
         name={name}
         item={item}
              />
+             <FormSubmitButton setName={setName} setTodoItems={setTodoItems} name={name} todoItems={todoItems} />
         </>
     )
 };

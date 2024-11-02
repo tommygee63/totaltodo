@@ -9,6 +9,6 @@ export function ListView({item, setTodoItems}) {
     }
 
     return (
-        <li>{item} <button onClick={handleClick} >x</button></li>
+        <li>{item} <button onClick={handleClick} >Remove Item</button></li>
     )
 };
