@@ -104,19 +104,7 @@ form {
   border: 5px dashed #0C0;
   width: 50%;
   margin: 2rem auto;
-}
-
-form h2 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-form ul {
-  list-style: none;
-}
-
-form li {
-  font-size: 2rem;
+  padding: 2rem;
 }
 
 input {
@@ -129,24 +117,35 @@ input {
   padding: 0.5rem;
   outline: none;
 }
-input:focus {
-  background-color: #0C0;
+
+h2 {
+  font-size: 3rem;;
 }
 
-form button {
+ul {
+  list-style: none;
+  font-size: 2rem;;
+}
+
+li {
+  margin-bottom: 1.5rem;
+}
+
+li button {
+  background-color: #0C0;
+  padding: 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  transform: translate(0, -5px);
+}
+
+.submit {
   background-color: #0C0;
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  border: 1px solid black;
+  padding: 0.5rem;
   margin: 2rem;
-}
-form button:hover {
-  font-size: 1.7rem;
-}
-
-.submit:hover {
-  font-size: 2.2rem;
 }
 
   /*  -- To Do View --  */
