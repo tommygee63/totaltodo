@@ -5,6 +5,7 @@ import { addTodo } from '../../app/todoSlice';
 import { useNavigate } from 'react-router-dom'; 
 import { v4 as uuidv4 } from 'uuid';
 import { TodoForm } from '../../components/TodoForm';
+import { ListView } from '../../components/ListView';
 
 export function CreateTodoForm() {
     const [todoItems, setTodoItems] = useState([]);
@@ -13,7 +14,7 @@ export function CreateTodoForm() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    /*function handleSubmit(e) {
         e.preventDefault();
 
         let id = uuidv4();
@@ -26,7 +27,7 @@ export function CreateTodoForm() {
         setName('')
         setTodoItems([])
         navigate('/')
-    };
+    };*/
 
     function handleNameChange(e) {
         setName(e.target.value);
@@ -36,7 +37,7 @@ export function CreateTodoForm() {
         setItem(e.target.value);
     };
 
-    function handleClick(e) {
+    function handleSubmit(e) {
         e.preventDefault()
         setTodoItems((prev) => {
             return [...prev, item];
@@ -45,13 +46,21 @@ export function CreateTodoForm() {
     };
 
 
-    return <TodoForm 
+    return (
+        <>
+            <h2>{name}</h2>
+            {!todoItems ? null : <ul>
+                {todoItems.map((item, index) => {
+                    return <ListView key={index} item={item} setTodoItems={setTodoItems} />
+                })}
+            </ul> }
+            <TodoForm 
         handleSubmit={handleSubmit} 
         handleNameChange={handleNameChange} 
         handleItemChange={handleItemChange} 
-        handleClick={handleClick} 
-        todoItems={todoItems}
         name={name}
         item={item}
-    />
+             />
+        </>
+    )
 };
