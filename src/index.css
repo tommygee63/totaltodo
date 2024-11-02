@@ -129,13 +129,16 @@ input {
   padding: 0.5rem;
   outline: none;
 }
+input:focus {
+  background-color: #0C0;
+}
 
 form button {
   background-color: #0C0;
   font-family: monospace;
   font-size: 1.5rem;
   font-weight: bold;
-  border: none;
+  border: 1px solid black;
   margin: 2rem;
 }
 form button:hover {

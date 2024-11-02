@@ -6,7 +6,7 @@ export function TodoForm({handleSubmit, handleNameChange, handleItemChange, hand
             <h2>{name}</h2>
             {!todoItems ? null : <ul>
                 {todoItems.map((item, index) => {
-                    return <li key={index} >{item}</li>
+                    return <li key={index} >{item}</li> 
                 })}
             </ul> }
             <input type='text' value={name} onChange={handleNameChange} placeholder='Name your To do...' />
