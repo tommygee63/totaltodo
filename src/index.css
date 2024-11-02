@@ -20,6 +20,7 @@ h1 {
 }
 h1:hover {
   border: 4px dashed #0C0;
+  transform: translate(0,-4px);
 }
 
 .link {
