@@ -4,7 +4,7 @@ body {
   color: #0C0;
   background-color: black;
   font-family: monospace;
-  background: radial-gradient(closest-side, #666666, #333333, #000000);
+  background: radial-gradient(closest-side, #444444, #333333, #000000);
   background-attachment: fixed;
 }
 
