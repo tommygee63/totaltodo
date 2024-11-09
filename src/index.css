@@ -7,6 +7,9 @@ body {
   background: radial-gradient(closest-side, #444444, #333333, #000000);
   background-attachment: fixed;
 }
+main {
+  margin-bottom: 100px;
+}
 
   /*  -- Header --  */
 
@@ -40,9 +43,10 @@ header {
     margin: 0 auto;
     margin-bottom: 3rem;
     border: 5px dashed #0C0;
+    box-sizing: border-box;
     margin-top: 5rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -72,7 +76,23 @@ header {
   width: 15%;
   height: 300px;
   overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
+.todoPreview:hover {
+  border: 5px dashed #0C0;
+}
+
+.todoPreview h2 {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+.todoPreview p {
+  font-size: 1rem;
+}
+
 .previewLink {
   background-color: #0C0;
   text-decoration: none;
@@ -94,6 +114,7 @@ header {
       text-decoration: none;
       border: 2px dashed #0C0;
       padding: 1rem;
+      margin-bottom: 2rem;
     }
     .newTodo:hover {
       border: 4px dashed #0C0;
