@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { todosSelector } from '../../app/todoSlice';
 import { CreateTodoButton } from '../../components/CreateTodoButton';
+import { Todo } from '../../components/Todo';
 
 export function TodoView() {
 
@@ -15,7 +16,7 @@ export function TodoView() {
         <div className='todoView' >
             <h2>{todo.name}</h2>
             {todo.items.map((item, index) => {
-                return <p key={index} >{item}</p>
+                return <Todo item={item} key={index} />
             })}
         </div>
         <CreateTodoButton />
